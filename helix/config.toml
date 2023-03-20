@@ -1,0 +1,21 @@
+theme = "autumn"
+
+[editor]
+
+[editor.statusline]
+right = ["diagnostics", "selections", "position", "file-encoding", "version-control"]
+
+[editor.indent-guides]
+render = true
+character = "╎"
+
+[editor.lsp]
+display-inlay-hints = true
+
+[keys.insert]
+C-b = "move_char_left"
+C-f = "move_char_right"
+C-p = "move_line_up"
+C-n = "move_line_down"
+C-a = "goto_line_start"
+C-e = "goto_line_end_newline"

@@ -1,8 +1,10 @@
+{{ if eq .chezmoi.os "linux" }}
+include current-theme.conf
 font_family Noto Mono
+{{ end }} 
 font_size 12.0
 macos_option_as_alt yes
 shell_integration enabled
-include current-theme.conf
 background_opacity 1.0
 
 map ctrl+a>r load_config_file

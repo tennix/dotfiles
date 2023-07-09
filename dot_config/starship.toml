@@ -1,0 +1,6 @@
+[kubernetes]
+disabled = false
+[gcloud]
+disabled = true
+[aws]
+disabled = true

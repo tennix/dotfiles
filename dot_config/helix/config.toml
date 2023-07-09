@@ -1,0 +1,22 @@
+theme = "pop-dark"
+
+[editor.indent-guides]
+character = "╎"
+render = true
+
+# [editor.lsp]
+# display-inlay-hints = true
+
+[editor.soft-wrap]
+enable = true
+
+[keys.insert]
+C-a = "goto_line_start"
+C-b = "move_char_left"
+C-e = "goto_line_end_newline"
+C-f = "move_char_right"
+C-n = "move_line_down"
+C-p = "move_line_up"
+
+[keys.normal."space"]
+o = "file_picker_in_current_buffer_directory"

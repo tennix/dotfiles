@@ -1,2 +1,6 @@
 README.md
 LICENSE
+
+{{ if ne .chezmoi.os "linux" }}
+.config/i3    # ignore i3 config for non-linux os
+{{ end }}

@@ -1,3 +1,5 @@
+[battery]
+disabled = true
 [kubernetes]
 disabled = false
 [gcloud]

@@ -1,0 +1,10 @@
+# load env
+[ -f $HOME/.zshenv ] && source $HOME/.zshenv
+# load alias
+[ -f $HOME/.shell_alias ] && source $HOME/.shell_alias
+# load private settings
+[ -f $HOME/.zsh_private ] && source $HOME/.zsh_private
+
+eval "$(direnv hook zsh)"
+eval "$(starship init zsh)"
+WORDCHARS=""

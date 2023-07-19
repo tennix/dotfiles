@@ -1,12 +1,12 @@
 local wezterm = require 'wezterm';
 return {
-  color_scheme = "Atom",
+  color_scheme = "Google (dark) (terminal.sexy)",
   -- colors = {
   --   background = "#0c0e14",
   -- },
   -- window_decorations = "NONE",
   -- font = wezterm.font("Iosevka"),
-  font_size = 10.0,
+  font_size = 12.0,
   -- dpi = 192.0,
   -- font_antialias = "Subpixel", -- None, Greyscale, Subpixel
   -- font_hinting = "Full",  -- None, Vertical, VerticalSubpixel, Full
@@ -14,14 +14,12 @@ return {
   hide_tab_bar_if_only_one_tab = true,
   keys = {
     { key = "a", mods = "LEADER|CTRL",  action=wezterm.action{SendString="\x01"}},
-    -- { key = "-", mods = "LEADER",       action=wezterm.action{SplitVertical={domain="CurrentPaneDomain"}}},
-    { key = "%", mods = "LEADER",       action=wezterm.action{SplitVertical={domain="CurrentPaneDomain"}}},
-    -- { key = "\\",mods = "LEADER",       action=wezterm.action{SplitHorizontal={domain="CurrentPaneDomain"}}},
+    { key = "\"",mods = "LEADER",       action=wezterm.action{SplitVertical={domain="CurrentPaneDomain"}}},
+    { key = "%", mods = "LEADER",       action=wezterm.action{SplitHorizontal={domain="CurrentPaneDomain"}}},
     { key = "r", mods = "LEADER",       action=wezterm.action.ReloadConfiguration},
-    { key = "\"",mods = "LEADER",       action=wezterm.action{SplitHorizontal={domain="CurrentPaneDomain"}}},
-    { key = "s", mods = "LEADER",       action=wezterm.action{SplitVertical={domain="CurrentPaneDomain"}}},
-    { key = "v", mods = "LEADER",       action=wezterm.action{SplitHorizontal={domain="CurrentPaneDomain"}}},
-    { key = "o", mods = "LEADER",       action="TogglePaneZoomState" },
+    { key = "o", mods = "LEADER",       action=wezterm.action{ActivatePaneDirection="Next"}},
+    { key = "n", mods = "LEADER",       action=wezterm.action{ActivateTabRelative=1}},
+    { key = "p", mods = "LEADER",       action=wezterm.action{ActivateTabRelative=-1}},
     { key = "z", mods = "LEADER",       action="TogglePaneZoomState" },
     { key = "c", mods = "LEADER",       action=wezterm.action{SpawnTab="CurrentPaneDomain"}},
     { key = "h", mods = "LEADER",       action=wezterm.action{ActivatePaneDirection="Left"}},
@@ -46,6 +44,6 @@ return {
     { key = "x", mods = "LEADER",       action=wezterm.action{CloseCurrentPane={confirm=true}}},
   },
   quick_select_patterns = {
-    '[0-9a-f]{7,40}',
+    '[A-Za-z0-9-./_]+',
   },
 }

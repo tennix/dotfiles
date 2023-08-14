@@ -1,0 +1,33 @@
+[alias]
+	br = "branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate"
+	lg = log --pretty=format:\"%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]\" --abbrev-commit -30
+	ci = "commit"
+	cm = "commit --message"
+	co = "checkout"
+	cp = "cherry-pick"
+	st = "status"
+	pf = "pull --ff-only"
+	pr = "pull --rebase"
+	last = "log -1 HEAD"
+	unstage = "reset HEAD --"
+	uncommit = "reset --soft HEAD~1"
+	alias = "!git config --get-regexp 'alias' | cut -c 7- | sed 's/ / = /'"
+
+[core]
+	editor = hx
+	pager = delta
+	excludesFile = ~/.gitignore
+
+[delta]
+	navigate = true
+	side-by-side = true
+
+# [url "ssh://git@github.com"]
+	# insteadOf = "https://github.com"
+
+[user]
+	email = "ztennix@gmail.com"
+	name = "tennix"
+
+[pull]
+	rebase = false

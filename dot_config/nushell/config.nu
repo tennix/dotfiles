@@ -776,5 +776,6 @@ $env.config = {
 }
 
 alias hx = helix
+alias k = kubectl
 use ~/.cache/starship/init.nu
 source ~/.config/nushell/zoxide.nu

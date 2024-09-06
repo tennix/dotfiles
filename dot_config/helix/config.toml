@@ -1,5 +1,8 @@
 theme = "pop-dark"
 
+[editor]
+true-color = true
+
 [editor.indent-guides]
 character = "╎"
 render = true

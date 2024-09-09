@@ -1,0 +1,19 @@
+[[hints.enabled]]
+regex = '[^\W]+'
+action = "Copy"
+post_processing = false
+binding.key = 'U'
+binding.mods = 'Control|Shift'
+
+[[hints.enabled]]
+# regex = '\w+[~/-_.]+\w+'
+regex = '[^(\s|\t\n|│|└|┘|┌|┐|─|")]+'
+action = "Paste"
+post_processing = false
+binding.key = 'I'
+binding.mods = 'Control|Shift'
+
+[[hints.enabled]]
+regex = "[^ ]+\\.zig:\\d+:\\d+"
+command = { program = "hx" }
+mouse = { enabled = true }

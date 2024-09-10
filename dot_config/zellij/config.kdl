@@ -141,7 +141,7 @@ keybinds clear-defaults=true {
         bind "l" { MoveFocus "Right"; SwitchToMode "Normal"; }
         bind "j" { MoveFocus "Down"; SwitchToMode "Normal"; }
         bind "k" { MoveFocus "Up"; SwitchToMode "Normal"; }
-        bind "o" { FocusNextPane; }
+        bind "o" { FocusNextPane; SwitchToMode "Normal"; }
         bind "0" { GoToTab 1; SwitchToMode "Normal"; }
         bind "1" { GoToTab 2; SwitchToMode "Normal"; }
         bind "2" { GoToTab 3; SwitchToMode "Normal"; }
@@ -160,7 +160,7 @@ keybinds clear-defaults=true {
             };
             SwitchToMode "Normal"
         }
-        bind "Space" { NextSwapLayout; }
+        bind "Space" { NextSwapLayout; SwitchToMode "Normal"; }
         bind "x" { CloseFocus; SwitchToMode "Normal"; }
     }
     // shared_except "locked" {

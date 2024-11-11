@@ -141,9 +141,9 @@ let light_theme = {
 }
 
 # External completer example
-let carapace_completer = {|spans|
-    carapace $spans.0 nushell ...$spans | from json
-}
+# let carapace_completer = {|spans|
+#     carapace $spans.0 nushell ...$spans | from json
+# }
 
 # The default config record. This is where much of your global configuration is setup.
 $env.config = {
@@ -210,7 +210,7 @@ $env.config = {
         external: {
             enable: true # set to false to prevent nushell looking into $env.PATH to find more suggestions, `false` recommended for WSL users as this look up may be very slow
             max_results: 100 # setting it lower can improve completion performance at the cost of omitting some options
-            completer: {|spans|
+            completer: { |spans|
                 carapace $spans.0 nushell ...$spans | from json
             } # check 'carapace_completer' above as an example
         }
@@ -229,7 +229,7 @@ $env.config = {
     }
 
     color_config: $dark_theme # if you want a more interesting theme, you can replace the empty record with `$dark_theme`, `$light_theme` or another custom record
-    use_grid_icons: true
+    # use_grid_icons: true
     footer_mode: 25 # always, never, number_of_rows, auto
     float_precision: 2 # the precision for displaying floats in tables
     buffer_editor: null # command that will be used to edit the current line buffer with ctrl+o, if unset fallback to $env.EDITOR and $env.VISUAL
@@ -290,7 +290,14 @@ $env.config = {
         pre_prompt: [{ null }] # run before the prompt is shown
         pre_execution: [{ null }] # run before the repl input is run
         env_change: {
-            PWD: [{|before, after| null }] # run if the PWD environment is different since the last repl input
+            PWD: [
+                {||
+                    if (which direnv | is-empty) {
+                        return
+                    }
+                    direnv export json | from json | default {} | load-env
+                }
+            ] # run if the PWD environment is different since the last repl input
         }
         display_output: "if (term size).columns >= 100 { table -e } else { table }" # run to display the output of a pipeline
         command_not_found: {
@@ -313,7 +320,7 @@ $env.config = {
                 null
             }
           )
-        } # return an error message when a command is not found
+        }
     }
 
     menus: [
@@ -915,3 +922,5 @@ $env.config = {
 }
 
 use ~/.cache/starship/init.nu
+source ~/.config/nushell/alias.nu
+source ~/.config/nushell/zoxide.nu
